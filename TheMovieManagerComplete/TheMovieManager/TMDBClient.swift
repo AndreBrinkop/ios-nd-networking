@@ -86,8 +86,8 @@ class TMDBClient : NSObject {
         
         /* 2/3. Build the URL and configure the request */
         let baseURL = NSURL(string: config.baseImageURLString)!
-        let url = baseURL.URLByAppendingPathComponent(size).URLByAppendingPathComponent(filePath)
-        let request = NSURLRequest(URL: url)
+        let url = baseURL.URLByAppendingPathComponent(size)!.URLByAppendingPathComponent(filePath)
+        let request = NSURLRequest(URL: url!)
         
         /* 4. Make the request */
         let task = session.dataTaskWithRequest(request) { (data, response, error) in

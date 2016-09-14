@@ -123,10 +123,10 @@ class MovieDetailViewController: UIViewController {
                 
                 /* 2B. Build the URL */
                 let baseURL = NSURL(string: appDelegate.config.baseImageURLString)!
-                let url = baseURL.URLByAppendingPathComponent("w342").URLByAppendingPathComponent(posterPath)
+                let url = baseURL.URLByAppendingPathComponent("w342")!.URLByAppendingPathComponent(posterPath)
                 
                 /* 3B. Configure the request */
-                let request = NSURLRequest(URL: url)
+                let request = NSURLRequest(URL: url!)
                 
                 /* 4B. Make the request */
                 let task = appDelegate.sharedSession.dataTaskWithRequest(request) { (data, response, error) in

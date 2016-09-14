@@ -129,10 +129,10 @@ extension FavoritesTableViewController {
             
             /* 2. Build the URL */
             let baseURL = NSURL(string: appDelegate.config.baseImageURLString)!
-            let url = baseURL.URLByAppendingPathComponent("w154").URLByAppendingPathComponent(posterPath)
+            let url = baseURL.URLByAppendingPathComponent("w154")!.URLByAppendingPathComponent(posterPath)
             
             /* 3. Configure the request */
-            let request = NSURLRequest(URL: url)
+            let request = NSURLRequest(URL: url!)
             
             /* 4. Make the request */
             let task = appDelegate.sharedSession.dataTaskWithRequest(request) { (data, response, error) in
